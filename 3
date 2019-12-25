@@ -1,0 +1,35 @@
+#include "stdafx.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	string c,c1,str,str1;
+	int x,x1,n=0,n1=0,l=0,l1=0;
+	ifstream file("C:\\Users\\Максим\\Desktop\\file.txt");
+	while (getline(file, c)) {
+		x = c.size();
+		n = n + x;
+		str.resize(n, ' ');
+		for (int i = 0;i < x;i++) {
+			str[l] = c[i];
+			l++;
+		}
+	}
+
+	ifstream file1("C:\\Users\\Максим\\Desktop\\file1.txt");
+	while (getline(file1, c1)) {
+		x1 = c1.size();
+		n1 = n1 + x1;
+		str1.resize(n1, ' ');
+		for (int i = 0;i < x1;i++) {
+			str1[l1] = c1[i];
+			l1++;
+		}
+	}
+	ofstream out("C:\\Users\\Максим\\Desktop\\file.txt");
+	out << str << "\n" << str1;
+	out.close();
+}
