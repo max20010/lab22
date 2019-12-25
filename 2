@@ -1,0 +1,25 @@
+#include "stdafx.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	string name;
+	int n, k;
+	getline(cin, name);
+	cout << "Введите N(строки): ";
+	cin >> n;
+	cout << "Введите K(символы): ";
+	cin >> k;
+	ofstream ofs(name);
+	ofstream out(name);
+	for (int i = 0;i < n;i++) {
+		for (int j = 0;j < k;j++) {
+			out << "*";
+		}
+		out << "\n";
+	}
+	out.close();
+}
